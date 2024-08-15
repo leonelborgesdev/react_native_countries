@@ -1,11 +1,16 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import { data } from "../data";
+import ItemCountry from './ItemCountry';
 
 const ListCountries = () => {
   console.log(data)
   return (
-    <View><Text>ListCountries</Text></View>
+    <FlatList
+    data={data}
+    ItemSeparatorComponent={()=> <Text> </Text>}
+    renderItem={({ item: country})=> <ItemCountry {...country}/>}
+    />
   )
 }
 
