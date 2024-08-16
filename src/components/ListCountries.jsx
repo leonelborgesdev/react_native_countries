@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, Text} from 'react-native'
+import { FlatList, Text, View} from 'react-native'
 import { data } from "../data";
 import ItemCountry from './ItemCountry';
 
@@ -17,11 +17,18 @@ const ListCountries = () => {
   },[])
   console.log(data)
   return (
-    <FlatList
-    data={countries}
-    ItemSeparatorComponent={()=> <Text> </Text>}
-    renderItem={({ item: country})=> <ItemCountry {...country}/>}
-    />
+    <View>
+      <View style={{alignItems: 'center'}}>
+        <Text style={{fontSize: 20}}>Lista de Paises</Text>
+      </View>
+      <View>
+        <FlatList
+        data={countries}
+        ItemSeparatorComponent={()=> <Text> </Text>}
+        renderItem={({ item: country})=> <ItemCountry {...country}/>}
+        />
+      </View>
+    </View>
   )
 }
 
