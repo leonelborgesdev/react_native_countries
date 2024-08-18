@@ -2,28 +2,33 @@ import React from "react";
 import { View, StyleSheet, Text, TouchableWithoutFeedback, ScrollView } from "react-native";
 import Constants from "expo-constants";
 import { Link, useLocation } from "react-router-native";
+import theme from "../theme";
 // import theme from "../theme.js";
 
 const styles = StyleSheet.create({
-  scroll:{
-    paddingBottom: 15
-  },
   container: {
-    // backgroundColor: theme.appBar.primary,
+    backgroundColor: theme.appBar.primary,
     paddingTop: Constants.statusBarHeight + 10,
     justifyContent: "center",
     flexDirection: "row",
   },
+  scroll:{
+    paddingBottom: 15
+  },
+  text: {
+    color: theme.appBar.textSecondary,
+    paddingHorizontal: 5
+  }
 });
 
 const AppBarTap = ({ children, to}) =>{
   const { pathname } = useLocation();
   const active = pathname === to;
 
-  // const textStyles = [styles.text, active && styles.active];
+  const textStyles = [styles.text, active && styles.active];
   return (
     <Link to={to}>
-      <Text>{children}</Text>
+      <Text style={{color: theme.appBar.textSecondary}}>{children}</Text>
     </Link>
   )
 
