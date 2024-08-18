@@ -20,7 +20,7 @@ const AppBarTap = ({ children, to}) =>{
   const { pathname } = useLocation();
   const active = pathname === to;
 
-  const textStyles = [styles.text, active && styles.active];
+  // const textStyles = [styles.text, active && styles.active];
   return (
     <Link to={to}>
       <Text>{children}</Text>
