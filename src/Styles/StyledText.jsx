@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import theme from '../theme'
 
 const StyledText = StyleSheet.create({
@@ -29,4 +29,21 @@ const StyledText = StyleSheet.create({
     }
 })
 
-export default StyledText
+export default function StyledText({
+    textTransform, align, children, color, fontSize, fontWeight, styles, ...restOfProps
+}){
+    const textStyles = [
+        styles.text,
+        textTransform === "uppercase" && styles.textTransformUpperCase,
+        align === "center" && styles.textAlingCenter,
+        color === "primary" && styles.colorPrimary,
+        color === "secondary" && styles.colorSecondary,
+        fontSize === "subheading" && styles.subheading,
+        fontWeight === "bold" && styles.bold
+    ]
+    return (
+        <Text style={textStyles} {...restOfProps}>
+            {children}
+        </Text>
+    )
+}
