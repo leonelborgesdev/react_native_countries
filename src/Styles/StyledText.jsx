@@ -2,15 +2,15 @@ import React from 'react'
 import { StyleSheet, Text } from 'react-native'
 import theme from '../theme'
 
-const StyledText = StyleSheet.create({
+const styles = StyleSheet.create({
     text: {
-        color: theme.colors.textPrimary,
+        color: theme.colors.textSecondary,
         fontSize: theme.fontSizes.body,
         fontFamily: theme.fonts.main,
         fontWeight: theme.fontWeights.normal
     },
     colorPrimary:{
-        color: theme.colors.textPrimary,
+        color: theme.colors.textSecondary,
     },
     colorSecondary: {
         color: theme.colors.textSecondary,
@@ -30,7 +30,7 @@ const StyledText = StyleSheet.create({
 })
 
 export default function StyledText({
-    textTransform, align, children, color, fontSize, fontWeight, styles, ...restOfProps
+    textTransform, align, children, color, fontSize, fontWeight, style, ...restOfProps
 }){
     const textStyles = [
         styles.text,

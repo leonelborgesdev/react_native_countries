@@ -2,7 +2,8 @@ import React from "react";
 import { View, StyleSheet, Text, TouchableWithoutFeedback, ScrollView } from "react-native";
 import Constants from "expo-constants";
 import { Link, useLocation } from "react-router-native";
-import theme from "../theme";
+import theme from "../theme/index.js";
+import StyledText  from "../Styles/StyledText.jsx";
 // import theme from "../theme.js";
 
 const styles = StyleSheet.create({
@@ -18,6 +19,9 @@ const styles = StyleSheet.create({
   text: {
     color: theme.appBar.textSecondary,
     paddingHorizontal: 5
+  },
+  active: {
+    color: theme.appBar.textPrimary,
   }
 });
 
@@ -28,7 +32,9 @@ const AppBarTap = ({ children, to}) =>{
   const textStyles = [styles.text, active && styles.active];
   return (
     <Link to={to}>
-      <Text style={{color: theme.appBar.textSecondary}}>{children}</Text>
+      <StyledText fontWeight={"bold"} style={textStyles}>
+        {children}
+      </StyledText>
     </Link>
   )
 
@@ -41,8 +47,8 @@ const AppBar = () => {
       showsHorizontalScrollIndicator={false}
       horizontal
       style={styles.scroll}>
-      <AppBarTap active to={"/"}>Inicio</AppBarTap>
-      <AppBarTap active to={"/paises"}>Paises</AppBarTap>
+        <AppBarTap active to={"/"}>Inicio</AppBarTap>
+        <AppBarTap to={"/paises"}>Paises</AppBarTap>
       </ScrollView>
     </View>
   );
