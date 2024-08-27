@@ -10,15 +10,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.appBar.primary,
     paddingTop: Constants.statusBarHeight + 10,
-    justifyContent: "center",
     flexDirection: "row",
   },
   scroll:{
-    paddingBottom: 15
+    paddingBottom: 15,
   },
   text: {
     color: theme.appBar.textSecondary,
-    paddingHorizontal: 5
+    paddingHorizontal: 5,
   },
   active: {
     color: theme.appBar.textPrimary,

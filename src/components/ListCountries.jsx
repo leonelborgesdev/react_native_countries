@@ -13,7 +13,6 @@ const ListCountries = () => {
   }
   useEffect(()=>{
     fetchCountries();
-    console.log("objCountries",countries)
   },[])
   console.log(data)
   return (
