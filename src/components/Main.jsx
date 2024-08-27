@@ -12,7 +12,7 @@ export default function Main() {
     <View style={{ flexGrow: 1 }}>
       <AppBar />
       <Routes>
-        <Route path="/" element={<Text> Inicio </Text>} />
+        <Route path="/" element={<Menu/>} />
         <Route path="/paises" element={<ListCountries />} />
       </Routes>
     </View>
