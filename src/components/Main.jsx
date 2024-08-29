@@ -1,9 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { Route, Routes } from "react-router-native";
 import Menu from "./Menu";
 import AppBar from "./AppBar";
 import ListCountries from "./ListCountries";
+import FlagsCountries from "./FlagsCountries/FlagsCountries";
 
 export default function Main() {
   return (
@@ -14,6 +15,7 @@ export default function Main() {
       <Routes>
         <Route path="/" element={<Menu/>} />
         <Route path="/paises" element={<ListCountries />} />
+        <Route path="/flagscountries" element={<FlagsCountries />} />
       </Routes>
     </View>
   );
