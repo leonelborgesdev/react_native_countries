@@ -8,19 +8,28 @@ const styles= StyleSheet.create({
     backgroundColor: 'cyan',
     width: 150,
     alignItems: 'center',
-    height: 50
+    borderRadius: 5,
+    borderColor: 'blue',
+    borderWidth: 2,
+    padding: 5
   },
   buttonCountries:{
-    backgroundColor: 'red',
+    backgroundColor: 'purple',
     width: 150,
     alignItems: 'center',
-    height: 50
+    borderRadius: 5,
+    borderColor: 'purple',
+    borderWidth: 2,
+    padding: 5
   },
   buttonRegion:{
     backgroundColor: 'orange',
     width: 150,
     alignItems:'center',
-    height: 50
+    borderRadius: 5,
+    borderColor: 'red',
+    borderWidth: 2,
+    padding: 5
   }
 })
 
@@ -36,7 +45,7 @@ export default function Menu() {
         </Link>
       </View>
       <View component={TouchableWithoutFeedback} style={styles.buttonCountries}>
-        <Text style={{fontSize: 20}}>Paises y Capitales</Text>
+        <Text style={{fontSize: 20, color: '#fff'}}>Paises y Capitales</Text>
       </View>
       <View component={TouchableWithoutFeedback} style={styles.buttonRegion}>
         <Text style={{fontSize: 20}}>Paises y Continentes</Text>
