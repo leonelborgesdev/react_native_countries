@@ -8,6 +8,12 @@ const styles= StyleSheet.create({
     width: 150,
     alignItems: 'center',
     height: 50
+  },
+  buttonCountries:{
+    backgroundColor: 'red',
+    width: 150,
+    alignItems: 'center',
+    height: 50
   }
 })
 
